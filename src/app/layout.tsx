@@ -1,14 +1,27 @@
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import SiteHeader from "../components/SiteHeader";
 import BottomNav from "../components/BottomNav";
 import LanguageProvider from "../components/LanguageProvider";
 import "./globals.css";
 
+export const viewport: Viewport = {
+  themeColor: "#173B63",
+};
 export const metadata: Metadata = {
   title: "JP Workshop | Motorcycle & Scooter Care",
   description:
     "Motorcycle and scooter servicing and repairs. Contact JP Workshop or request a servicing appointment.",
+  applicationName: "JP Workshop",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "JP Workshop",
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
